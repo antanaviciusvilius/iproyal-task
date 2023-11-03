@@ -1,0 +1,44 @@
+
+:root {
+  --main-color: #ff5151;
+  --main-color-lighten: #ff6161;
+  --primary-subtitle-color: #686868;
+  --secondary-title-color: #303030;
+  --secondary-subtitle-color: #686868;
+  --tertiary-color: #161e54;
+
+  --main-font: 'Poppins', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
+
+  --header-height: 90px;
+  --sidebar-width: 242px;
+
+  --mobile-breakpoint: 390px;
+  --tablet-breakpoint: 834px;
+  --desktop-breakpoint: 1440px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: var(--main-font);
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
