@@ -8,6 +8,8 @@ const props = defineProps<{
   disabled?: boolean;
 }>();
 
+const emit = defineEmits(['selectOption']);
+
 const isDropdownOpen = ref<boolean>(false);
 
 const toggleDropdown = () => {
@@ -15,6 +17,11 @@ const toggleDropdown = () => {
     return;
   }
   isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const handleOptionSelect = (option: string) => {
+  emit('selectOption', option);
+  toggleDropdown();
 };
 </script>
 <template>
@@ -26,7 +33,7 @@ const toggleDropdown = () => {
       </div>
     </div>
     <ul v-if="isDropdownOpen" class="list-dropdown-options">
-      <li class="list-dropdown-item" v-for="option in options" :key="option">{{ option }}</li>
+      <li class="list-dropdown-item" v-for="option in options" :key="option" @click="handleOptionSelect(option)" @keydown="handleOptionSelect(option)">{{ option }}</li>
     </ul>
   </div>
 </template>
@@ -46,7 +53,6 @@ const toggleDropdown = () => {
 
 .list-dropdown-options,
 .list-dropdown-selected-option {
-    font-feature-settings: 'salt' on, 'liga' off;
     font-family: var(--secondary-font);
     font-size: 12px;
     font-style: normal;
@@ -74,10 +80,14 @@ const toggleDropdown = () => {
     flex-shrink: 0;
     gap: 8px;
     padding: 0px 6px;
+    text-transform: capitalize;
+    cursor: pointer;
 }
 
 .list-dropdown-item {
     padding-top: 4px;
+    cursor: pointer;
+    text-transform: capitalize;
 }
 
 .arrow-icon {

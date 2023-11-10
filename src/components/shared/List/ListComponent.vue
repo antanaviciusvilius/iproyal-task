@@ -45,6 +45,7 @@ defineProps<{
 .list-actions {
     display: flex;
     align-items: center;
+		gap: 8px;
 }
 
 .list-content {
