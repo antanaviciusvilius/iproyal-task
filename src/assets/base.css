@@ -6,16 +6,22 @@
   --secondary-title-color: #303030;
   --secondary-subtitle-color: #686868;
   --tertiary-color: #161e54;
+  --just-white-color: #fff;
+  --background-color: #fafafa;
+  --icon-color: #b2b2b2;
+  --divider-color: #f1f1f1;
+  --sidebar-title-color: #000;
+  --sidebar-link-hover-background-color: #f9e2e2;
 
   --main-font: 'Poppins', sans-serif;
   --secondary-font: 'Roboto', sans-serif;
 
-  --header-height: 90px;
-  --sidebar-width: 242px;
+  --border-radius: 6px;
+  --border-style: 1px solid #e0e0e0;
 
-  --mobile-breakpoint: 390px;
-  --tablet-breakpoint: 834px;
-  --desktop-breakpoint: 1440px;
+  --header-height: 90px;
+  --sidebar-width-md: 90px;
+  --sidebar-width-lg: 242px;
 }
 
 *,
@@ -35,6 +41,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
+  background-color: var(--just-white-color);
 }
 
 #app {
